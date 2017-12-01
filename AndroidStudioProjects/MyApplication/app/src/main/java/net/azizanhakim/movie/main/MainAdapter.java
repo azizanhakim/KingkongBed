@@ -1,5 +1,6 @@
 package net.azizanhakim.movie.main;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,7 +44,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), mData.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+                Intent = new intent
             }
         });
     }
