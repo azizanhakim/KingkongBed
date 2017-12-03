@@ -1,4 +1,4 @@
-package net.azizanhakim.movie.main;
+package com.example.acer.movieandroidkejar.main;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,17 +8,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.acer.movieandroidkejar.R;
 import com.squareup.picasso.Picasso;
-
-import net.azizanhakim.movie.R;
 
 import java.util.List;
 
 /**
- * Created by J I J A N on 12/1/2017.
+ * Created by J I J A N on 01/12/2017.
  */
 
-public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainHolder> {
+public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainHolder>{
 
     private List<MainDao> mData;
 
@@ -27,7 +26,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainHolder> {
     }
 
     @Override
-        public MainAdapter.MainHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MainAdapter.MainHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_main, parent, false);
         MainHolder holder = new MainHolder(view);
         return holder;
@@ -39,11 +38,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainHolder> {
         Picasso.with(holder.imageRow.getContext())
                 .load(mData.get(position).getImageUrl())
                 .into(holder.imageRow);
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(v.getContext(), mData.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), mData.get(position).getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -61,7 +59,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainHolder> {
             super(itemView);
 
             imageRow = (ImageView) itemView.findViewById(R.id.imageRow);
-            textTitleRow = (TextView) itemView.findViewById(R.id.textTitleRow);
+            textTitleRow = (TextView) itemView.findViewById(R.id.titleRow);
         }
     }
 }
